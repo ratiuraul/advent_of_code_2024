@@ -1,5 +1,7 @@
 from os import path
 from collections import defaultdict
+from functools import cmp_to_key
+
 rules_path = path.realpath('day5/input_rules.txt')
 updates_path = path.realpath('day5/input_updates.txt')
 
@@ -27,9 +29,16 @@ def check_line(line: list[int]) -> bool:
     return True
 
 
+def sort_line(a: int, b: int) -> int:
+    if invalid_map[(a, b)]:
+        return 1
+    return -1
+
+
 for line in updates_content:
     line_numbers = [int(num) for num in line.strip().split(',')]
-    if check_line(line_numbers):
-        sum += line_numbers[len(line_numbers)//2]
+    if not check_line(line_numbers):
+        fixed_line = sorted(line_numbers, key=cmp_to_key(sort_line))
+        sum += fixed_line[len(fixed_line)//2]
 
 print(sum)
