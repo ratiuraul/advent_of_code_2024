@@ -16,7 +16,7 @@ def get_start_position():
 max_row = len(map)
 max_col = len(map[0])
 
-r, c = get_start_position
+r, c = get_start_position()
 dr, dc = -1, 0
 visited = set()
 
