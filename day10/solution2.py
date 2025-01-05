@@ -23,6 +23,8 @@ def get_rating(row, col):
         for dr, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
             nr, nc = r + dr, c + dc
             if 0 <= nr < max_row and 0 <= nc < max_col:
+                # we never add the parent node in que due to following condition
+                # in this way, all the paths to a 9 are unique
                 if map[r][c] + 1 == map[nr][nc]:
                     queue.append((nr, nc))
     return len(endings)
