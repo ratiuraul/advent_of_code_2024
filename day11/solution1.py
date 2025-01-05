@@ -36,5 +36,5 @@ def arrangement_after_blink(arrangement: List, blinks: int) -> List:
     return new_arrangement
 
 
-sol1 = arrangement_after_blink(arrangement, 25)
+sol1 = arrangement_after_blink(arrangement, 75)
 print(len(sol1))
