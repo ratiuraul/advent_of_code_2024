@@ -1,0 +1,13 @@
+# simmilar to Dijkstra
+# whenever we move, we choose the lowest cost path
+# list of unvisited nodes
+# starting from root, mark as visited
+# examine cost of each path, pick shortest one
+# mark the next node as visited
+# update costs of nodes from new node
+# we reached all nodes, return to root and check the other option
+# when all nodes are visited, we are done
+
+#REF: https://www.youtube.com/watch?v=_B5cx-WD5EA
+
+#Proprity Queue = HEAP !
