@@ -16,15 +16,14 @@ for byte_position in byte_positions[0:1024]:
     x, y = byte_position.split(',')
     fallen_bytes.append((int(x),  int(y)))
 queue = deque([(0, 0, 0)])
-# visited = set((0, 0))
-visited = []
+visited = set((0, 0))
 
 while queue:
     r, c, distance = queue.popleft()
     node = (r, c)
     if node in visited:
         continue
-    visited.append(node)
+    visited.add(node)
     if (r, c) == (max_row, max_col):
         break
     for dr, dc in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
