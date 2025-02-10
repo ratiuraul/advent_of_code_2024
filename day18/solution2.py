@@ -43,8 +43,11 @@ lo, hi = 0, len(fallen_bytes) - 1
 while lo < hi:
     mid = (lo + hi) // 2
     if count_steps(mid + 1) != -1:
+        # not blocked road , we are at the end, not our searched element
         lo = mid + 1
     else:
+        # road is blocked, is there any other lower number?
+
         hi = mid
 
 
