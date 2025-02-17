@@ -63,6 +63,3 @@ for sequence, bananas in sequences.items():
         max = sequance_bananas
         max_sequence = sequence
 print(max_sequence)
-# din fiecare secventa iei max.
-# suma, si determini max seq
-#
